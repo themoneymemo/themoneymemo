@@ -1,0 +1,305 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>The Money Memo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="You in 6 months. Learn the boring business that pays for it. Get the free starter roadmap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: one phone column read top to bottom like a reel. Black "daydream" opener with lock-screen notifications, blue reveal, cream explainer, lime signup. A sticky bottom bar keeps the signup one tap away. Single brand look in both themes. */
+:root {
+  --blue: #2B3BFF;
+  --lime: #C8FF2E;
+  --cream: #F6F1E4;
+  --ink: #0E0E10;
+  --ink-soft: #4A4740;
+  --glass: rgba(255,255,255,.10);
+  --line: #DCD4BF;
+  --display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --body: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.5; -webkit-font-smoothing: antialiased; padding-bottom: 84px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--ink); }
+.wrap { max-width: 560px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -0.035em; line-height: 1.0; margin: 0; text-wrap: balance; }
+em.s { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+p { margin: 0; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+
+/* daydream opener */
+.dream { background: radial-gradient(120% 60% at 80% 0%, #1d2a8f 0%, var(--ink) 55%); color: var(--cream); overflow: hidden; }
+.dream .wrap { padding-block: 22px 56px; display: grid; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 15px; }
+.brand img { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--cream); }
+.brand b { font-weight: 800; }
+.brand em { font-family: var(--serif); font-style: italic; font-size: 19px; }
+.brand .handle { margin-left: auto; font-size: 13px; opacity: .7; }
+.dream .eyebrow { color: var(--lime); }
+.dream h1 { font-size: clamp(40px, 11.5vw, 62px); }
+.dream h1 .hl { color: var(--lime); }
+.dream .lede { font-size: 20px; line-height: 1.45; }
+
+.lock { display: grid; gap: 12px; }
+.clock { text-align: center; font-family: var(--display); font-weight: 600; letter-spacing: -0.04em; font-size: 64px; line-height: 1; font-variant-numeric: tabular-nums; }
+.date { text-align: center; font-size: 15px; opacity: .75; margin-top: -4px; }
+.note { background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 12px 14px; display: grid; grid-template-columns: 36px 1fr auto; gap: 4px 12px; align-items: start; animation: drop .6s cubic-bezier(.2,.9,.3,1.2) both; }
+.note:nth-child(3) { animation-delay: .25s; } .note:nth-child(4) { animation-delay: .5s; } .note:nth-child(5) { animation-delay: .75s; } .note:nth-child(6) { animation-delay: 1s; } .note:nth-child(7) { animation-delay: 1.25s; }
+@keyframes drop { from { transform: translateY(-14px) scale(.97); opacity: .3; } }
+.ico { grid-row: span 2; width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; font-size: 19px; font-weight: 800; color: var(--ink); }
+.note .app { font-size: 13px; font-weight: 600; opacity: .7; text-transform: uppercase; letter-spacing: .04em; }
+.note .when { font-size: 12px; opacity: .55; }
+.note .txt { grid-column: 2 / -1; font-size: 15.5px; line-height: 1.35; }
+.note .txt b { font-weight: 700; }
+.ex { font-size: 11px; opacity: .55; font-style: italic; }
+
+.now { border: 1px dashed rgba(246,241,228,.35); border-radius: 16px; padding: 16px; display: grid; gap: 6px; color: rgba(246,241,228,.78); }
+.now p { font-size: 20px; font-weight: 600; line-height: 1.35; }
+.lbl { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.jump { display: grid; place-items: center; position: relative; margin-block: -8px; }
+.jump::before { content: ""; position: absolute; left: 50%; top: -10px; bottom: -10px; border-left: 2px dashed var(--lime); }
+.jump span { position: relative; background: var(--lime); color: var(--ink); font-weight: 800; font-size: 14px; padding: 6px 14px; border-radius: 999px; transform: rotate(-3deg); box-shadow: 3px 3px 0 var(--blue); }
+.then { display: grid; gap: 10px; padding: 20px 18px 22px; border-radius: 18px; background: linear-gradient(160deg, rgba(43,59,255,.55), rgba(200,255,46,.10)); border: 1.5px solid rgba(200,255,46,.55); box-shadow: 0 0 60px rgba(200,255,46,.18); animation: rise .9s cubic-bezier(.2,.9,.3,1) both .2s; }
+.then .lbl { color: var(--lime); }
+.then h1 em.s { color: var(--lime); display: block; margin-top: .1em; }
+@keyframes rise { from { transform: translateY(10px); box-shadow: 0 0 0 rgba(200,255,46,0); } }
+.dream .lede b { color: var(--lime); font-weight: 700; }
+.hero-cta { justify-self: start; box-shadow: 4px 4px 0 var(--blue); }
+
+.what .wrap { padding-block: 44px; display: grid; gap: 18px; }
+.what h2 { font-size: 34px; }
+.tiles { display: grid; gap: 10px; }
+.tile { background: #fff; border: 2px solid var(--ink); border-radius: 14px; padding: 16px 18px; display: grid; gap: 2px; }
+.tile b { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.25; }
+.tile span { font-size: 17px; color: var(--ink-soft); }
+.dream h1 .hl { color: var(--lime); display: block; margin-top: .15em; }
+
+/* reveal */
+.reveal { background: var(--blue); color: var(--cream); }
+.reveal .wrap { padding-block: 52px; display: grid; gap: 18px; }
+.reveal .eyebrow { color: var(--lime); }
+.reveal h2 { font-size: clamp(34px, 9.5vw, 50px); }
+.sticker { display: inline-block; background: var(--lime); color: var(--ink); padding: 0 .16em .04em; transform: rotate(-3deg); box-shadow: 5px 5px 0 var(--ink); border-radius: 4px; margin: .1em 0; }
+.reveal p { font-size: 18px; max-width: 32em; }
+
+/* reading sections */
+section.read .wrap { padding-block: 46px; display: grid; gap: 18px; }
+section.read + section.read .wrap { border-top: 1.5px solid var(--line); }
+section.read .eyebrow { color: var(--blue); }
+section.read h2 { font-size: clamp(32px, 9vw, 44px); }
+section.read p { max-width: 34em; }
+.split { display: grid; gap: 12px; }
+.word { background: #fff; border: 1.5px solid var(--ink); border-radius: 14px; padding: 14px 16px; display: grid; gap: 4px; }
+.word .w { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+.word .w small { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 18px; color: var(--ink-soft); letter-spacing: 0; margin-left: 6px; }
+.word p { font-size: 16px; color: var(--ink-soft); }
+.math { background: var(--ink); color: var(--cream); border-radius: 16px; padding: 18px; display: grid; gap: 10px; font-variant-numeric: tabular-nums; }
+.math .row { display: flex; justify-content: space-between; gap: 12px; font-size: 16px; }
+.math .row b { font-family: var(--display); font-weight: 800; }
+.math .total { border-top: 1px dashed #555; padding-top: 10px; font-size: 18px; }
+.math .total b { color: var(--lime); font-size: 24px; }
+.reveal .math { box-shadow: 5px 5px 0 var(--ink); }
+.math .fine { font-size: 13px; color: #A9A397; }
+
+/* two futures */
+.futures { display: grid; gap: 12px; }
+.fut { border-radius: 16px; padding: 18px; display: grid; gap: 10px; }
+.fut h3 { font-size: 22px; }
+.fut ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; font-size: 16px; }
+.fut.a { background: #fff; border: 1.5px solid var(--ink); color: var(--ink-soft); }
+.fut.b { background: var(--lime); color: var(--ink); box-shadow: 5px 5px 0 var(--ink); }
+.fut .lbl { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+
+/* roadmap + signup */
+.join { background: var(--ink); color: var(--cream); }
+.join .wrap { padding-block: 52px; display: grid; gap: 24px; }
+.join .eyebrow { color: var(--lime); }
+.join h2 { font-size: clamp(32px, 9vw, 44px); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid #2c2c2c; }
+.steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--display); font-weight: 800; font-size: 20px; color: var(--lime); }
+.steps div { min-width: 0; }
+.steps b { display: block; font-size: 19px; min-width: 0; }
+.steps span { color: #B9B3A6; font-size: 15px; }
+.card { background: var(--cream); color: var(--ink); border-radius: 18px; padding: 20px; display: grid; gap: 14px; box-shadow: 6px 6px 0 var(--lime); }
+.tag { display: inline-flex; align-items: center; gap: 8px; justify-self: start; background: var(--ink); color: var(--lime); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; }
+.tag i { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .25; } }
+.card h3 { font-size: 26px; }
+.card p { color: var(--ink-soft); font-size: 16px; }
+.perks { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 15.5px; }
+.perks li { display: grid; grid-template-columns: 22px 1fr; }
+.perks li::before { content: "✓"; font-weight: 800; color: var(--blue); }
+form { display: grid; gap: 10px; }
+label.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+input[type=email] { width: 100%; font: inherit; font-size: 17px; padding: 15px 16px; border: 2px solid var(--ink); border-radius: 12px; background: #fff; color: var(--ink); }
+input[type=email]:focus { outline: 3px solid var(--blue); outline-offset: 2px; }
+button, .cta { font: inherit; font-weight: 800; font-size: 18px; letter-spacing: -0.01em; padding: 15px 18px; border: 2px solid var(--ink); border-radius: 12px; background: var(--lime); color: var(--ink); cursor: pointer; box-shadow: 4px 4px 0 var(--ink); transition: transform .08s, box-shadow .08s; text-align: center; text-decoration: none; }
+button:active, .cta:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+button:focus-visible, .cta:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+button[disabled] { opacity: .6; }
+.fine { font-size: 13px; color: var(--ink-soft); }
+.msg { font-size: 15px; font-weight: 600; padding: 12px 14px; border-radius: 10px; background: var(--lime); color: var(--ink); }
+.msg.err { background: #FFE1DC; }
+
+.final { background: var(--cream); }
+.final .wrap { padding-block: 48px 30px; display: grid; gap: 18px; }
+.final h2 { font-size: clamp(34px, 10vw, 48px); }
+.final .wrap { padding-block: 48px 30px; }
+footer { font-size: 13px; color: var(--ink-soft); display: grid; gap: 6px; padding-top: 10px; }
+
+/* sticky bar */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: rgba(14,14,16,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); transition: transform .25s; }
+.bar .in { max-width: 560px; margin: 0 auto; display: flex; align-items: center; gap: 12px; color: var(--cream); }
+.bar span { font-size: 14px; line-height: 1.25; flex: 1; min-width: 0; }
+.bar span b { color: var(--lime); }
+.bar .cta { font-size: 16px; padding: 11px 16px; box-shadow: none; white-space: nowrap; }
+.bar.off { transform: translateY(110%); }
+
+@media (min-width: 520px) { .split { grid-template-columns: 1fr 1fr; } .split .word:last-child { grid-column: 1 / -1; } .futures { grid-template-columns: 1fr 1fr; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .then, .tag i { animation: none; } button, .cta, .bar { transition: none; } }
+</style>
+
+<header class="dream">
+  <div class="wrap">
+    <div class="brand">
+      <img src="data:image/jpeg;base64,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" alt="">
+      <span><em>the</em> <b>money</b> <em>memo</em></span>
+      <span class="handle">@themoneymemo</span>
+    </div>
+
+    <div class="now">
+      <span class="lbl">You, today</span>
+      <p>Same alarm. Same commute. Saying "one day."</p>
+    </div>
+
+    <div class="jump" aria-hidden="true"><span>6 months later</span></div>
+
+    <div class="then">
+      <span class="lbl">You, 6 months from now</span>
+      <h1>Your hours. Your rules. <span class="hl">You already know the picture.</span></h1>
+    </div>
+
+    <p class="lede"><b>The money memo</b> shows you the simple online businesses that get people there. Free, in plain English.</p>
+    <a class="cta hero-cta" href="#join">Get the free roadmap</a>
+  </div>
+</header>
+
+<section class="what">
+  <div class="wrap">
+    <h2>What you get</h2>
+    <div class="tiles">
+      <div class="tile"><b>1 short email a week</b><span>Takes 2 minutes to read.</span></div>
+      <div class="tile"><b>1 business idea, explained simply</b><span>No jargon. No fluff.</span></div>
+      <div class="tile"><b>A free starter roadmap</b><span>Step by step, from zero.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <span class="eyebrow">The business we teach</span>
+    <h2>B2B SaaS = <span class="sticker">software businesses pay for monthly</span></h2>
+    <p>You build one useful tool. Businesses pay a small fee every month to use it. That monthly money keeps coming in, even while you sleep.</p>
+    <div class="math" aria-label="Example math">
+      <div class="row"><span>1 business pays</span><b>$200 / month</b></div>
+      <div class="row"><span>You get</span><b>50 businesses</b></div>
+      <div class="row total"><span>You earn</span><b>$10,000 / month</b></div>
+      <span class="fine">Example math, not a promise. Finding those customers is the real work.</span>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <span class="eyebrow">The free starter roadmap</span>
+    <h2>5 steps from zero to your first customer</h2>
+    <ol class="steps">
+      <li><b>Find a boring problem</b></li>
+      <li><b>Talk to real business owners</b></li>
+      <li><b>Build the smallest version</b></li>
+      <li><b>Get your first paying customer</b></li>
+      <li><b>Keep them paying every month</b></li>
+    </ol>
+
+    <div class="card">
+      <span class="tag"><i></i>Early access is open</span>
+      <h3>Get it free, before everyone else</h3>
+      <form class="signup" novalidate>
+        <label class="sr" for="email-top">Email address</label>
+        <input id="email-top" type="email" name="email_address" placeholder="you@email.com" autocomplete="email" required>
+        <button type="submit">Send me the roadmap</button>
+        <div class="msg" hidden role="status"></div>
+      </form>
+      <p class="fine">Free. No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>6 months goes by either way.</h2>
+    <form class="signup" novalidate>
+      <label class="sr" for="email-bottom">Email address</label>
+      <input id="email-bottom" type="email" name="email_address" placeholder="you@email.com" autocomplete="email" required>
+      <button type="submit">I'm in, send it free</button>
+      <div class="msg" hidden role="status"></div>
+    </form>
+    <footer>
+      <span>Stories and numbers here are examples, not results anyone is promised. Not financial or income advice.</span>
+      <span>© 2026 The Money Memo</span>
+    </footer>
+  </div>
+</section>
+
+<nav class="bar" id="bar">
+  <div class="in">
+    <span><b>Free starter roadmap.</b><br>Early access is open.</span>
+    <a class="cta" href="#join">Get it free</a>
+  </div>
+</nav>
+
+<script>
+// Paste the Kit (ConvertKit) form ID here to turn on real signups.
+const KIT_FORM_ID = "10102129";
+
+document.querySelectorAll("form.signup").forEach(form => {
+  const input = form.querySelector("input");
+  const btn = form.querySelector("button");
+  const msg = form.querySelector(".msg");
+  const show = (text, err) => { msg.textContent = text; msg.classList.toggle("err", !!err); msg.hidden = false; };
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const email = input.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { show("That email doesn't look right. Check for typos and try again.", true); input.focus(); return; }
+    if (!KIT_FORM_ID || KIT_FORM_ID.startsWith("__")) { show("Preview only: signups aren't connected yet.", true); return; }
+    btn.disabled = true;
+    try {
+      const body = new FormData();
+      body.append("email_address", email);
+      await fetch("https://app.kit.com/forms/" + KIT_FORM_ID + "/subscriptions", { method: "POST", body, mode: "no-cors" });
+      input.hidden = true; btn.hidden = true;
+      show("You're in. Check your inbox to confirm, and the roadmap comes to you first.");
+    } catch {
+      btn.disabled = false;
+      if (window.top !== window) show("This preview can't send signups. They'll work once the page is live on its own web address.", true);
+      else show("Couldn't send that. Check your connection and try again.", true);
+    }
+  });
+});
+
+// Hide the sticky bar once a signup form is on screen.
+const bar = document.getElementById("bar");
+if ("IntersectionObserver" in window) {
+  const seen = new Set();
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => en.isIntersecting ? seen.add(en.target) : seen.delete(en.target));
+    bar.classList.toggle("off", seen.size > 0);
+  }, { threshold: 0.2 });
+  document.querySelectorAll("form.signup").forEach(f => io.observe(f));
+}
+</script>
+</body></html>
